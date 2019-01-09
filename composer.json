@@ -1,0 +1,40 @@
+{
+    "name": "waygou/brunofalcao",
+    "description": "My personal website package. Feel free to use it for your own developments.",
+    "type": "library",
+    "keywords": [
+        "laravel",
+        "php"
+    ],
+    "require": {
+        "php": "^7.1",
+        "illuminate/support": "5.7.*",
+        "spatie/laravel-csp": "^2.1"
+    },
+    "require-dev": {
+        "phpunit/phpunit": "^7.1"
+    },
+    "autoload": {
+        "psr-4": {
+            "Waygou\\BrunoFalcao\\": "src/"
+        },
+        "files": [
+            "src/helpers.php"
+        ]
+    },
+    "extra": {
+        "laravel": {
+            "providers": [
+                "Waygou\\BrunoFalcao\\ServiceProvider"
+            ]
+        }
+    },
+    "license": "MIT",
+    "authors": [
+        {
+            "name": "Waygou",
+            "email": "bruno.c.falcao@brunofalcao.me"
+        }
+    ],
+    "minimum-stability": "dev"
+}
