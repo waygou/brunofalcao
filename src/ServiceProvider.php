@@ -56,7 +56,6 @@ class ServiceProvider extends BaseServiceProvider
         Post::observe(PostObserver::class);
     }
 
-
     protected function registerMigrations()
     {
         if ($this->app->runningInConsole()) {
@@ -86,7 +85,7 @@ class ServiceProvider extends BaseServiceProvider
             $this->publishes([
                 __DIR__.'/../configuration/brunofalcao.php' => config_path('brunofalcao.php'),
             ], 'brunofalcao-configuration');
-        };
+        }
     }
 
     protected function loadRoutes()

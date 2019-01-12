@@ -13,7 +13,7 @@ class Post extends EloquentAbstract
 
     protected $casts = [
         'published' => 'boolean',
-        'published_at' => 'datetime'
+        'published_at' => 'datetime',
     ];
 
     public function scopePublished($query)
@@ -35,7 +35,7 @@ class Post extends EloquentAbstract
                                          'image2' => $this->image_2,
                                          'image3' => $this->image_3,
                                          'image4' => $this->image_4,
-                                         'image5' => $this->image_5
+                                         'image5' => $this->image_5,
                                         ], $this->body);
 
         return $parsedown->text($this->body);

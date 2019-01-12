@@ -2,7 +2,6 @@
 
 namespace Waygou\BrunoFalcao\Policies;
 
-use Spatie\Csp\Value;
 use Spatie\Csp\Keyword;
 use Spatie\Csp\Directive;
 use Spatie\Csp\Policies\Basic;

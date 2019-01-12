@@ -2,7 +2,7 @@
 
 namespace Waygou\BrunoFalcao\Observers;
 
-use \Waygou\BrunoFalcao\Models\User;
+use Waygou\BrunoFalcao\Models\User;
 
 class UserObserver
 {

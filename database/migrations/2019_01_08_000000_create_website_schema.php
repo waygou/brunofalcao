@@ -1,6 +1,5 @@
 <?php
 
-use Spatie\Tags\Tag;
 use Waygou\BrunoFalcao\Models\User;
 use Illuminate\Support\Facades\Schema;
 use Illuminate\Database\Schema\Blueprint;
@@ -16,7 +15,7 @@ class CreateWebsiteSchema extends Migration
     public function up()
     {
         Schema::create('posts', function (Blueprint $table) {
-            /** Columns */
+            /* Columns */
             $table->increments('id');
 
             $table->string('slug');
@@ -46,7 +45,6 @@ class CreateWebsiteSchema extends Migration
             $table->string('image_1')
                   ->nullable();
 
-
             $table->string('image_2')
                   ->nullable();
 
@@ -56,18 +54,17 @@ class CreateWebsiteSchema extends Migration
             $table->string('image_4')
                   ->nullable();
 
-
             $table->string('image_5')
                   ->nullable();
 
-            /** System columns */
+            /* System columns */
             $table->timestamps();
             $table->softDeletes();
 
-            /** Engine */
+            /* Engine */
             $table->engine = 'InnoDB';
 
-            /** Collation */
+            /* Collation */
             $table->charset = 'utf8';
             $table->collation = 'utf8_unicode_ci';
 
@@ -79,7 +76,7 @@ class CreateWebsiteSchema extends Migration
 
         User::create(['name' => 'Bruno Falcão',
                       'email' => 'bruno.falcao@live.com',
-                      'password' => bcrypt('honda')]);
+                      'password' => bcrypt('honda'), ]);
     }
 
     /**
