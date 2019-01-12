@@ -34,10 +34,10 @@ class CreateWebsiteSchema extends Migration
                   ->nullable()
                   ->comments('Used in case I want to relate it with an external reference link.');
 
-            $table->boolean('published')
+            $table->boolean('is_published')
                   ->default(false);
 
-            $table->dateTime('published_at')
+            $table->date('published_at')
                   ->nullable();
 
             $table->string('featured_image')

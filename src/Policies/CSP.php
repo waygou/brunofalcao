@@ -18,6 +18,7 @@ class CSP extends Basic
             ->addDirective(Directive::DEFAULT, 'fonts.gstatic.com')
             ->addDirective(Directive::FORM_ACTION, Keyword::SELF)
             ->addDirective(Directive::IMG, Keyword::SELF)
+            ->addDirective(Directive::IMG, 'secure.gravatar.com')
             ->addDirective(Directive::MEDIA, Keyword::SELF)
             ->addDirective(Directive::OBJECT, Keyword::NONE)
             ->addDirective(Directive::SCRIPT, Keyword::SELF)

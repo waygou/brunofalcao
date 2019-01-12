@@ -23,6 +23,6 @@ Route::get(
 )->name('homepage.index');
 
 Route::get(
-    'blog-single',
-    '\Waygou\BrunoFalcao\Features\BlogSingle\Controllers\BlogSingleController@show'
+    '/posts/{kebab}',
+    '\Waygou\BrunoFalcao\Features\PostSingle\Controllers\PostSingleController@show'
 )->name('blog-single.show');

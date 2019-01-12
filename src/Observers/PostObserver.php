@@ -49,16 +49,6 @@ class PostObserver
             $errors = $validator->errors()->all();
             throw new Exception($errors[0]);
         }
-
-        // We need to translate the image acronyms to real urls.
-        /*
-        $post->body = str_replace_assoc(['image_1' => Storage::url($post->image_1),
-                                         'image_2' => $post->image_2,
-                                         'image_3' => $post->image_3,
-                                         'image_4' => $post->image_4,
-                                         'image_5' => $post->image_5
-                                        ], $post->body);
-        */
     }
 
     /**

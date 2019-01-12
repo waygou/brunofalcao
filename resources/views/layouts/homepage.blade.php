@@ -20,11 +20,7 @@
             <div class="alf-nav-overlay-menu-wrapper">
                 <div class="alf-left-menu-overlay">
                     <ul class="alf-nav-overlay-main-nav alf-overlay-menu">
-                        <li class="alf-overlay-menu-item"><a href="/">Home</a></li>
-                        <li class="alf-overlay-menu-item"><a href="about.html">About Me</a></li>
-                        <li class="alf-overlay-menu-item"><a href="portfolio.html">My Projects</a></li>
-                        <li class="alf-overlay-menu-item"><a href="blog.html">My Blog</a></li>
-                        <li class="alf-overlay-menu-item"><a href="contact.html">Contact me</a></li>
+                        @include('website::partials.navigation')
                     </ul>
                 </div>
             </div>
@@ -36,10 +32,9 @@
         </div>
     </div>
     <div id="alf-page-wrapper">
-
         <!-- Header -->
         <header>
-            <div class="container-fluid">
+            <div class="{{ $container ?? 'container-fluid' }}">
                 <div class="row">
                     <div class="col-md-12 col-sm-12">
                         <div class="alf-header-container d-flex">
@@ -58,48 +53,17 @@
                 </div>
             </div>
         </header>
-
         <!-- Homepage Slider -->
-        <div class="container-fluid">
+        <div class="{{ $container ?? 'container-fluid' }}">
             <section class="alf-section-slider">
                 <div class="alf-container-center">
-                    <div class="swiper-container">
-                        <div class="swiper-wrapper">
-                            <div class="swiper-slide">
-                                <div class="swiper-slide-block">
-                                    <div class="swiper-slide-block-img">
-                                        <a href="post.html"><img src="/vendor/brunofalcao/images/slider.jpg" alt=""></a>
-                                    </div>
-                                    <div class="swiper-slide-block-text">
-                                        <h2 class="alf-main-title">2019<br />Resolutions<span></span></h2>
-                                        <h3 class="alf-main-subtitle">TAGS — <span> • <a href="http://www.clix.pt" target="_blank">Enjoying life</a> • <a href="http://www.clix.pt" target="_blank">Year 2019</a> • <a href="http://www.clix.pt" target="_blank">Personal thoughts</a></span></h3>
-                                        <p class="alf-paragraph">I wish that Eloquent could have existed before. It's not everyday that we have a beautiful ORM library like this one, full of innovative features that will capture your eye and coding creativity to build amazing web projects.</p>
-                                        <a class="alf-link" href="post.html">Read more</a></div>
-                                </div>
-                            </div>
-                            <div class="swiper-slide">
-                                <div class="swiper-slide-block">
-                                    <div class="swiper-slide-block-img">
-                                        <a href="post.html"> <img src="/vendor/brunofalcao/images/slider.jpg" alt=""> </a>
-                                    </div>
-                                    <div class="swiper-slide-block-text">
-                                        <h2 class="alf-main-title">Creative<br>Design<span>.</span></h2>
-                                        <h3 class="alf-main-subtitle">TAGLINE — <span> • Dream • Create • Inspire</span></h3>
-                                        <p class="alf-paragraph">Quisque pulvinar elitc Nam placerat dui lementm anthe efhe fermentum. Integer sodales augue velleo aliquam ranaalf feugiat. Fusce mollis augue sit amet hendrerit vestibulum. Duisteyerionyer venenatis lacus.</p>
-                                        <a class="alf-link z-index-5" href="post.html">Discover</a> <span class="alf-number">2</span> </div>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="swiper-button-next"> <i class="fa fa-long-arrow-right" aria-hidden="true"></i> </div>
-                        <div class="swiper-button-prev"> <i class="fa fa-long-arrow-left" aria-hidden="true"></i> </div>
-                    </div>
+                    @yield('swiper')
                 </div>
             </section>
         </div>
-
         <!-- Footer -->
         <footer>
-            <div class="container-fluid">
+            <div class="{{ $container ?? 'container-fluid' }}">
                 <div class="row">
                     <div class="col-md-12 col-sm-12">
                         <div class="alf-footer-wrapper">
