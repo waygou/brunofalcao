@@ -2,9 +2,8 @@
 
 namespace Waygou\BrunoFalcao\Observers;
 
-use \Exception;
+use Exception;
 use Waygou\BrunoFalcao\Models\Post;
-use Illuminate\Support\Facades\Storage;
 use Illuminate\Support\Facades\Validator;
 
 class PostObserver

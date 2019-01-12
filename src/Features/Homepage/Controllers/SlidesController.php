@@ -13,6 +13,6 @@ class SlidesController extends Controller
 
         //dd($posts[0]->tags);
 
-        return ['posts' => Post::published()->byNewest()->get() ];
+        return ['posts' => Post::published()->byNewest()->get()];
     }
 }
