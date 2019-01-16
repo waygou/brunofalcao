@@ -21,6 +21,11 @@ class Post extends EloquentAbstract
         return $query->where('is_published', true);
     }
 
+    public function scopeSlug($query, $value)
+    {
+        return $query->where('slug', $value);
+    }
+
     public function scopeByNewest($query)
     {
         return $query->orderBy('published_at', 'desc');
@@ -31,13 +36,19 @@ class Post extends EloquentAbstract
         $parsedown = new Parsedown();
 
         // The Markdown of the images should be replaced by the real URL.
-        $this->body = str_replace_assoc(['image1' => Storage::url($this->image_1),
-                                         'image2' => $this->image_2,
-                                         'image3' => $this->image_3,
-                                         'image4' => $this->image_4,
-                                         'image5' => $this->image_5,
+        $this->body = str_replace_assoc(['(image1)' => '(' . Storage::url($this->image_1) . ')',
+                                         '(image2)' => '(' . Storage::url($this->image_2) . ')',
+                                         '(image3)' => '(' . Storage::url($this->image_3) . ')',
+                                         '(image4)' => '(' . Storage::url($this->image_4) . ')',
+                                         '(image5)' => '(' . Storage::url($this->image_5) . ')',
                                         ], $this->body);
 
-        return $parsedown->text($this->body);
+        $html = $parsedown->text($this->body);
+
+        // Make some HTML enhancements.
+        // 1. <img src=" should become <img class="img-fluid" src=".
+        $html = str_replace_assoc(['<img src=' => "<img class='img-fluid' src="], $html);
+
+        return $html;
     }
 }

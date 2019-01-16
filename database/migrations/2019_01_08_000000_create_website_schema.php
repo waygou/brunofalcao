@@ -14,6 +14,29 @@ class CreateWebsiteSchema extends Migration
      */
     public function up()
     {
+        Schema::create('comments', function (Blueprint $table) {
+            /* Columns */
+            $table->increments('id');
+            $table->string('post_id');
+            $table->string('from');
+
+            $table->string('email')
+                  ->nullable();
+
+            $table->text('comments');
+
+            /* System columns */
+            $table->timestamps();
+            $table->softDeletes();
+
+            /* Engine */
+            $table->engine = 'InnoDB';
+
+            /* Collation */
+            $table->charset = 'utf8';
+            $table->collation = 'utf8_unicode_ci';
+        });
+
         Schema::create('posts', function (Blueprint $table) {
             /* Columns */
             $table->increments('id');
@@ -73,7 +96,6 @@ class CreateWebsiteSchema extends Migration
         });
 
         /*** Data initialization **/
-
         User::create(['name' => 'Bruno Falcão',
                       'email' => 'bruno.falcao@live.com',
                       'password' => bcrypt('honda'), ]);

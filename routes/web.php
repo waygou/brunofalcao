@@ -25,4 +25,9 @@ Route::get(
 Route::get(
     '/posts/{kebab}',
     '\Waygou\BrunoFalcao\Features\PostSingle\Controllers\PostSingleController@show'
-)->name('blog-single.show');
+)->name('post-single.show');
+
+Route::post(
+    '/posts/{kebab}/comments',
+    '\Waygou\BrunoFalcao\Features\PostSingle\Controllers\CommentsController@store'
+)->name('comments.store');
