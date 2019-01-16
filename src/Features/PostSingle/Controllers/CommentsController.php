@@ -10,6 +10,7 @@ class CommentsController extends Controller
     public function show($kebab)
     {
         $post = Post::slug($kebab)->first();
+
         return ['post' => $post];
     }
 

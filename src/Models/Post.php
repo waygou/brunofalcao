@@ -36,11 +36,11 @@ class Post extends EloquentAbstract
         $parsedown = new Parsedown();
 
         // The Markdown of the images should be replaced by the real URL.
-        $this->body = str_replace_assoc(['(image1)' => '(' . Storage::url($this->image_1) . ')',
-                                         '(image2)' => '(' . Storage::url($this->image_2) . ')',
-                                         '(image3)' => '(' . Storage::url($this->image_3) . ')',
-                                         '(image4)' => '(' . Storage::url($this->image_4) . ')',
-                                         '(image5)' => '(' . Storage::url($this->image_5) . ')',
+        $this->body = str_replace_assoc(['(image1)' => '('.Storage::url($this->image_1).')',
+                                         '(image2)' => '('.Storage::url($this->image_2).')',
+                                         '(image3)' => '('.Storage::url($this->image_3).')',
+                                         '(image4)' => '('.Storage::url($this->image_4).')',
+                                         '(image5)' => '('.Storage::url($this->image_5).')',
                                         ], $this->body);
 
         $html = $parsedown->text($this->body);
