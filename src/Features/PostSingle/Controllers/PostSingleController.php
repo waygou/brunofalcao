@@ -15,6 +15,7 @@ class PostSingleController extends Controller
     public function show($kebab)
     {
         $post = Post::slug($kebab)->first();
+
         return flame(['post' => $post]);
     }
 }
