@@ -91,7 +91,7 @@ class ServiceProvider extends BaseServiceProvider
     protected function loadRoutes()
     {
         // Load Routes example.
-        Route::middleware(['web', \Spatie\Csp\AddCspHeaders::class])
+        Route::middleware(['web'])
              ->namespace("Waygou\BrunoFalcao")
              ->group(__DIR__.'/../routes/web.php');
     }
